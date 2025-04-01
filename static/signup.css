@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-image: url(images/image-bg.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo {
+    height: 90px; 
+    width: 120px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px; 
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+label {
+    font-size: 14px; 
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+    padding: 10px; 
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px; 
+    outline: none;
+    width: 100%;
+}
+
+.signup-form input[type="text"]:focus,
+.signup-form input[type="email"]:focus,
+.signup-form input[type="password"]:focus {
+    border-color: #2c6b2f;
+}
+
+.signup-button {
+    padding: 10px; 
+    font-size: 14px;
+    color: #fff;
+    background-color: #2c6b2f;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+    background-color: #3b8f44;
+}
+
+.signup-link a {
+    color: #2c6b2f;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 20px; 
+        max-width: 90%;
+    }
+
+    .logo {
+        height: 80px;
+        width: 100px;
+    }
+
+    .signup-form input[type="text"],
+    .signup-form input[type="email"],
+    .signup-form input[type="password"] {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .signup-button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .signup-link a {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .logo {
+        height: 70px;
+        width: 90px;
+    }
+
+    .signup-form input[type="text"],
+    .signup-form input[type="email"],
+    .signup-form input[type="password"] {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .signup-button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .signup-link a {
+        font-size: 13px;
+    }
+}

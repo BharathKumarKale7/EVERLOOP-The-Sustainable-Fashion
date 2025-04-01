@@ -7,13 +7,23 @@ var app = express();
 // Add static files location
 app.use(express.static("static"));
 
+app.set('view engine', 'pug');
+app.set('views', './app/views');
 
 // Get the functions in the db.js file to use
 const db = require('./services/db');
 
 // Create a route for root - /
 app.get("/", function(req, res) {
-    res.send("Hello world!");
+    res.render("home");
+});
+
+app.get("/login", function(req, res) {
+    res.render("login");
+});
+
+app.get("/signup", function(req, res) {
+    res.render("signup");
 });
 
 // Create a route for testing the db
