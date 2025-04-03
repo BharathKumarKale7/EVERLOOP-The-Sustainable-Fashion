@@ -52,89 +52,39 @@ body {
     color: rgb(36, 127, 66) !important;
 }
 
-/* Middle section */
-.middle-container {
-    background-size: cover;
-}
+/* wishlist section */
 
-.bg-container {
-    background-image: url(images/banner.jpg);
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.middle-heading {
-    font-size: 84px;
-    font-family: "Nunito", sans-serif;
-    color: rgb(253, 13, 13);
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.middle-para {
-    font-size: 62px;
-    font-family: "Nunito", sans-serif;
-    color: white;
-}
-
-.middle-button{
-    background-color: rgb(248, 4, 4);
-    font-family: "Nunito", sans-serif;
-    color: white;
-    font-size: 12px;
-    width: 120px;
-    height: 54px;
-    margin: 10px;
-    border: 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.middle-button:hover {
-    background-color: black; 
-}
-
-.dress-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.wishlist-container {
+    max-width: 600px;
+    margin-top: 150px !important;
+    background: #f8f9fa;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-.box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    padding: 4px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-.box:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
-}
-
-.box-image {
-    width: 300px;
-    height: 360px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.box-heading {
-    font-family: "Nunito", sans-serif;
-    color: black;
-    font-size: 15px;
-    margin-top: 10px;
+.wishlist-container h2 {
     text-align: center;
+    color: #333;
+}
+.wishlist-container .list-group-item {
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.wishlist-container .remove-item {
+    background: #dc3545;
+    color: white;
+}
+.wishlist-container .remove-item:hover {
+    background: #c82333;
+}
+
+.empty-message {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  margin-top: 10px;
 }
 
 /* Footer section */

@@ -11,16 +11,16 @@ html(lang="en")
             div.login-container
                 img.logo(src="images/icon.jpg" alt="Everloop Logo")
                 h2 Login to EVERLOOP
-                form.login-form(action="/login" method="POST")
+                form.login-form(action="/login" method="get")
                     label(for="email") Email
                     input#email(type="email" name="email" placeholder="Enter your email" required)
 
                     label(for="password") Password
                     input#password(type="password" name="password" placeholder="Enter your password" required)
 
-                a.forgot-p(href="") Forgot password?
+                    a.forgot-p(href="") Forgot password?
                 
-                button.login-button(type="submit") Login
+                    button.login-button(type="submit") Login
 
                 p.login-link Don't have an account? 
                     a(href="signup") Sign Up
