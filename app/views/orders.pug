@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .container.mt-5
+    h1 My Orders
+    if orders.length
+      each order in orders
+        .card.mb-3
+          .card-header
+            h5 Order ##{order.id} - #{order.status}
+            p Placed on: #{order.created_at}
+          .card-body
+            h6 Items:
+            ul
+              li #{order.name} - £#{order.price} x #{order.quantity}
+            p
+              strong Total: £#{order.total}
+            p
+              strong Shipping Address:
+              | #{order.address_id ? 'Address ID: ' + order.address_id : 'Not specified'}
+    else
+      p.text-muted You have no orders yet.

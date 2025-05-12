@@ -10,22 +10,25 @@ html(lang="en")
   body
     .container
       .signup-container
-        img.logo(src="images/icon.jpg" alt="Everloop Logo")
+        img.logo(src="/images/icon.jpg" alt="Everloop Logo")
         h2 Create an Account
+        if error
+          .alert.alert-danger.mt-3= error
         form.signup-form(action="/submit" method="POST")
-          label(for="name") Full Name
-          input#name(type="text" name="name" placeholder="Enter your full name" required)
-
-          label(for="email") Email
-          input#email(type="email" name="email" placeholder="Enter your email" required)
-
-          label(for="password") Password
-          input#password(type="password" name="password" placeholder="Enter your password" required)
-
-          label(for="confirm-password") Confirm Password
-          input#confirm-password(type="password" name="confirm-password" placeholder="Confirm your password" required)
-
+          input(type="hidden" name="_csrf" value=csrfToken)
+          .form-group
+            label(for="name") Full Name
+            input#name.form-control(type="text" name="name" placeholder="Enter your full name" value=(typeof name !== 'undefined' ? name : '') required)
+          .form-group
+            label(for="email") Email
+            input#email.form-control(type="email" name="email" placeholder="Enter your email" value=(typeof email !== 'undefined' ? email : '') required)
+          .form-group
+            label(for="password") Password
+            input#password.form-control(type="password" name="password" placeholder="Enter your password" required)
+          small.form-text.text-muted Password must be 8+ characters, with at least one uppercase letter, one lowercase letter, and one special character (e.g., !@#$%).
+          .form-group
+            label(for="confirm-password") Confirm Password
+            input#confirm-password.form-control(type="password" name="confirm-password" placeholder="Confirm your password" required)
           button.signup-button(type="submit") Sign Up
-
         p.signup-link Already have an account? 
-          a(href="login") Login
+          a(href="/login") Login

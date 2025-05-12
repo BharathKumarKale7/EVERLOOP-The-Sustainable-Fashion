@@ -31,7 +31,6 @@ body {
     padding: 30px;
     max-width: 400px;
     width: 100%;
-    text-align: center;
 }
 
 .logo {
@@ -44,7 +43,7 @@ body {
 .signup-form {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
 }
 
@@ -57,7 +56,7 @@ label {
 .signup-form input[type="text"],
 .signup-form input[type="email"],
 .signup-form input[type="password"] {
-    padding: 10px; 
+    padding: 8px; 
     font-size: 14px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -80,8 +79,9 @@ label {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%;
+    width: 30%;
     transition: background-color 0.3s ease;
+    margin: auto;
 }
 
 .signup-button:hover {
@@ -91,7 +91,7 @@ label {
 .signup-link a {
     color: #2c6b2f;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px !important;
 }
 
 .signup-link a:hover {
@@ -102,7 +102,7 @@ label {
 @media (max-width: 768px) {
     .signup-container {
         padding: 20px; 
-        max-width: 90%;
+        max-width: 70%;
     }
 
     .logo {
@@ -113,7 +113,7 @@ label {
     .signup-form input[type="text"],
     .signup-form input[type="email"],
     .signup-form input[type="password"] {
-        padding: 8px;
+        padding: 5px;
         font-size: 14px;
     }
 
@@ -129,7 +129,7 @@ label {
 
 @media (max-width: 480px) {
     .signup-container {
-        padding: 15px;
+        padding: 10px;
         max-width: 100%;
     }
 
@@ -141,7 +141,7 @@ label {
     .signup-form input[type="text"],
     .signup-form input[type="email"],
     .signup-form input[type="password"] {
-        padding: 8px;
+        padding: 5px;
         font-size: 14px;
     }
 
@@ -153,4 +153,21 @@ label {
     .signup-link a {
         font-size: 13px;
     }
+}
+
+.form-group { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-text { 
+    display: block;
+    margin-top: 2px; 
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.signup-link { 
+    margin-top: 10px; 
 }

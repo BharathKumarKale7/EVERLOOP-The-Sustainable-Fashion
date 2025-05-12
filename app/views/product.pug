@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .product-container
+    .row
+      .col-md-6
+        img(src=item.image, class="img-fluid" alt=item.name)
+      .col-md-6
+        h1= item.name
+        p= item.description
+        p
+          strong Price: £#{item.price}
+        if loggedIn
+          form(action="/cart/add/" + item.id method="POST" style="display: inline-block; margin-right: 10px;")
+            input(type="hidden" name="_csrf" value=csrfToken)
+            button.product-button.btn.btn-primary(type="submit") Add to Cart
+          form(action="/wishlist/add/" + item.id method="POST" style="display: inline-block;")
+            input(type="hidden" name="_csrf" value=csrfToken)
+            button.product-button.btn.btn-success(type="submit") Add to Wishlist
+        else
+          a.product-button.btn.btn-primary(href="/login") Login to Add to Cart

@@ -1,87 +1,29 @@
-html 
-  head 
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title EVERLOOP - Sustainable Fashion
-    link(rel="icon" type="image" href="images/icon.jpg")
-    link(rel="stylesheet" href="/wishlist.css")
-    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=favorite")
-    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css")
-    
-  body
-    h1.top-heading.fixed-top FREE SHIPPING ON YOUR FIRST ORDER | SHOP NOW
-    header.container-fluid
-      nav.navbar.navbar-expand-lg.navbar-light.bg-white.shadow-sm.mt-4.fixed-top
-        div.container-fluid.d-flex.justify-content-between
-            a.navbar-brand.order-2.order-lg-1.mx-md-auto(href="/")
-                img.brand-icon(src="images/icon.jpg", alt="EverLoop Icon") 
-            
-            button.navbar-toggler.order-1.d-lg-none(type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav")
-                span.navbar-toggler-icon
-            
-            div#navbarNav.collapse.navbar-collapse.order-lg-2.order-4
-                div.navbar-nav.mr-auto
-                    a.nav-item.nav-link(href="") Men 
-                    a.nav-item.nav-link(href="") Women
-                    a.nav-item.nav-link(href="") Kids
-                    a.nav-item.nav-link(href="") Accessories
+extends layout
 
-                
-            div.icons-container.order-3
-                a.nav-item.nav-link(href="cart") 🛒 Cart
-                a.nav-item.nav-link(href="wishlist") ❤️ Wishlist 
-                a.nav-item.nav-link(href="login") 🔑 Login
-    
-    div.container.wishlist-container
-        h2 Wishlist
-        p#empty-message.empty-message Your wishlist is empty.
-        ul#wishlist-items.list-group
-    
-    footer.footer-container
-      div.newsletter-container
-        h.heading1 KEEP ME UPDATED
-        P.para1 Sign up to gain early access to the hottest deals & offers online.
-        div.subscribe-container
-          input.mail-input(type="email", placeholder="E-Mail")
-          input.subscribe-button(type="button", value="SUBSCRIBE") 
-
-      div.quick-links-container
-        div.link-container
-          h.links-heading QUICK LINKS
-          a.links(href="") Contact Us
-          a.links(href="") My Account
-          a.links(href="") Track My Order
-          a.links(href="") Returns 
-        div.link-container
-          h.links-heading INFORMATION
-          a.links(href="") Delivery
-          a.links(href="") Terms & Conditions
-          a.links(href="") Privacy Policy
-          a.links(href="") FAQ
-        div.link-container
-          h.links-heading ABOUT US
-          a.links(href="") About EverLoop
-          a.links(href="") Our Mission
-
-      div.social-container
-        img.social-icon(src="images/facebook.png", alt="facebook")
-        img.social-icon(src="images/instagram.png", alt="instagram")
-        img.social-icon(src="images/youtube.png", alt="youtube")
-        img.social-icon.p-1(src="images/twitter.png", alt="twitter")
-
-      div.payment-container
-        img.payment-image(src="images/amazon-pay.png", alt="Amazon pay")
-        img.payment-image(src="images/apple-pay.png", alt="Apple pay")
-        img.payment-image(src="images/card.png", alt="Mastercard")
-        img.payment-image(src="images/google-pay.png", alt="Google Pay")
-        img.payment-image(src="images/american-express.png", alt="American express")
-        img.payment-image(src="images/paypal.png", alt="PayPal")
-        img.payment-image(src="images/visa.png", alt="Visa")
-
-      div.d-flex.flex-row.justify-content-center
-        img.copyright-image(src="images/copyright.png", alt="Copyright")          
-        h1.bottom-heading 2025 Everloop, Inc.
-
-    // Bootstrap 5 JS (Correct Version)
+block content
+  .wishlist-container
+    if message
+      .alert.alert-success.alert-dismissible.fade.show.mt-3(role="alert")
+        = message
+        button.btn-close(type="button" data-bs-dismiss="alert" aria-label="Close")
+    if error
+      .alert.alert-danger.alert-dismissible.fade.show.mt-3(role="alert")
+        = error
+        button.btn-close(type="button" data-bs-dismiss="alert" aria-label="Close")
+    h1 Wishlist
+    if wishlistItems && wishlistItems.length
+      each item in wishlistItems
+        .card.mb-3
+          .row.g-0
+            .col-md-4
+              img(src=item.image, class="img-fluid rounded-start", alt=item.name)
+            .col-md-8
+              .card-body
+                h5.card-title= item.name
+                p.card-text= item.description
+                p.card-text
+                  small.text-muted Price: £#{item.price}
+                a.btn.btn-danger(href=`/wishlist/remove/${item.id}`) Remove
+    else
+      p.text-muted Your wishlist is empty.
     script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js")
-    script(src="wishlist.js")

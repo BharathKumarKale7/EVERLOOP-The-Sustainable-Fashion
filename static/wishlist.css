@@ -52,40 +52,7 @@ body {
     color: rgb(36, 127, 66) !important;
 }
 
-/* wishlist section */
 
-.wishlist-container {
-    max-width: 600px;
-    margin-top: 150px !important;
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-.wishlist-container h2 {
-    text-align: center;
-    color: #333;
-}
-.wishlist-container .list-group-item {
-    background: #fff;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    padding: 10px;
-}
-.wishlist-container .remove-item {
-    background: #dc3545;
-    color: white;
-}
-.wishlist-container .remove-item:hover {
-    background: #c82333;
-}
-
-.empty-message {
-  text-align: center;
-  color: #777;
-  font-style: italic;
-  margin-top: 10px;
-}
 
 /* Footer section */
 
