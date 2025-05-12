@@ -1,18 +1,36 @@
+// Extend base layout template
 extends layout
 
+// Define main content block
 block content
+  // Container for women's collection
   .collection-container
+    // Main heading for the page
     h1 Our Women's Collection
+    // Introductory text
     p Discover the latest trends in women's fashion
+
+    // Section for women's dresses
     section.women-dresses
+      // Subheading for featured dresses
       h2 Featured Women's Dresses
+      // Container for dress items grid
       .dress-container.mt-2
+        // Bootstrap grid with centered columns
         .row.g-4.justify-content-center
+          // Iterate over items array
           each item in items
+            // Grid column for each item
             .col-6.col-md-3.text-center
+              // Link to product page
               a.box(href=`/product/${item.id}`)
+                // Container for item image
                 .image-container
+                  // Product image with alt text
                   img.box-image(src=item.image, alt=item.name)
+                // Container for item details
                 .dress-info
+                  // Item name as heading
                   h3.box-heading= item.name
+                  // Item price
                   p From £#{item.price}

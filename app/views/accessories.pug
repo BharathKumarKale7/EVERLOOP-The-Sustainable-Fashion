@@ -1,18 +1,27 @@
+// Extend base layout
 extends layout
 
+// Main content block
 block content
+  // Accessories collection container
   .collection-container
-    h1 Our Accessories Collection
-    p Discover the latest trends in accessories
+    h1 Our Accessories Collection // Page heading
+    p Discover the latest trends in accessories // Intro text
+    // Accessories items section
     section.accessories-items
-      h2 Featured Accessories
+      h2 Featured Accessories // Section heading
+      // Grid for accessory items
       .dress-container
-        .row.g-4.justify-content-center
+        .row.g-4.justify-content-center // Bootstrap grid
+          // Loop through items
           each item in items
-            .col-6.col-md-3.text-center
+            .col-6.col-md-3.text-center // Grid column
+              // Product link
               a.box(href=`/product/${item.id}`)
+                // Item image
                 .image-container
                   img.box-image(src=item.image, alt=item.name)
+                // Item details
                 .dress-info
-                  h3.box-heading= item.name
-                  p From £#{item.price}
+                  h3.box-heading= item.name // Item name
+                  p From £#{item.price} // Item price

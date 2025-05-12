@@ -4,31 +4,71 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title EVERLOOP - Sustainable Fashion
+
+    //- Favicon and Styles
     link(rel="icon" type="image" href="images/icon.jpg")
     link(rel="stylesheet" href="/signup.css")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=favorite")
+
   body
     .container
       .signup-container
         img.logo(src="/images/icon.jpg" alt="Everloop Logo")
         h2 Create an Account
+
+        //- Error message if any
         if error
           .alert.alert-danger.mt-3= error
+
+        //- Signup Form
         form.signup-form(action="/submit" method="POST")
           input(type="hidden" name="_csrf" value=csrfToken)
+
+          //- Full Name
           .form-group
             label(for="name") Full Name
-            input#name.form-control(type="text" name="name" placeholder="Enter your full name" value=(typeof name !== 'undefined' ? name : '') required)
+            input#name.form-control(
+              type="text", 
+              name="name", 
+              placeholder="Enter your full name", 
+              value=(typeof name !== 'undefined' ? name : ''), 
+              required)
+
+          //- Email
           .form-group
             label(for="email") Email
-            input#email.form-control(type="email" name="email" placeholder="Enter your email" value=(typeof email !== 'undefined' ? email : '') required)
+            input#email.form-control(
+              type="email", 
+              name="email", 
+              placeholder="Enter your email", 
+              value=(typeof email !== 'undefined' ? email : ''), 
+              required)
+
+          //- Password
           .form-group
             label(for="password") Password
-            input#password.form-control(type="password" name="password" placeholder="Enter your password" required)
-          small.form-text.text-muted Password must be 8+ characters, with at least one uppercase letter, one lowercase letter, and one special character (e.g., !@#$%).
+            input#password.form-control(
+              type="password", 
+              name="password", 
+              placeholder="Enter your password", 
+              required)
+
+          //- Password instructions
+          small.form-text.text-muted 
+            | Password must be 8+ characters, with at least one uppercase letter, one lowercase letter, and one special character (e.g., !@#$%).
+
+          //- Confirm Password
           .form-group
             label(for="confirm-password") Confirm Password
-            input#confirm-password.form-control(type="password" name="confirm-password" placeholder="Confirm your password" required)
+            input#confirm-password.form-control(
+              type="password", 
+              name="confirm-password", 
+              placeholder="Confirm your password", 
+              required)
+
+          //- Submit button
           button.signup-button(type="submit") Sign Up
+
+        //- Login link
         p.signup-link Already have an account? 
           a(href="/login") Login

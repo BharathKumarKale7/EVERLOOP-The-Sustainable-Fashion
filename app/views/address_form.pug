@@ -1,32 +1,48 @@
+// Extend base layout
 extends layout
 
+// Main content block
 block content
+  // Address form container
   .m-container.container
+    // Dynamic heading for add/update
     h2 #{action.includes('add') ? 'Add New Address' : 'Update Address'}
+    // Display error message if present
     if error
       .alert.alert-danger.mt-3= error
+    // Form for adding/updating address
     form(action=action method='POST')
+      // CSRF token for security
       input(type="hidden" name="_csrf" value=csrfToken)
+      // Address type input
       .form-group
         label(for="address_type") Address Type
         input#address_type.form-control(type="text" name="address_type" value=address.address_type placeholder="e.g., Home, Work" required)
+      // Address line 1 input
       .form-group
         label(for="address_line1") Address Line 1
         input#address_line1.form-control(type="text" name="address_line1" value=address.address_line1 placeholder="Street address" required)
+      // Address line 2 input (optional)
       .form-group
         label(for="address_line2") Address Line 2
         input#address_line2.form-control(type="text" name="address_line2" value=address.address_line2 placeholder="Apartment, suite, etc. (optional)")
+      // City input
       .form-group
         label(for="city") City
         input#city.form-control(type="text" name="city" value=address.city required)
+      // State input
       .form-group
         label(for="state") State
         input#state.form-control(type="text" name="state" value=address.state required)
+      // Country input
       .form-group
         label(for="country") Country
         input#country.form-control(type="text" name="country" value=address.country required)
+      // Postal code input
       .form-group
         label(for="postal_code") Postal Code
         input#postal_code.form-control(type="text" name="postal_code" value=address.postal_code required)
+      // Submit button with dynamic text
       button.btn.btn-primary(type="submit") #{action.includes('add') ? 'Add Address' : 'Update Address'}
+      // Cancel button linking to profile
       a.btn.btn-secondary.ml-2(href="/profile") Cancel

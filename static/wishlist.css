@@ -1,15 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
+/* Reset margin and apply box-sizing globally */
 * {
     box-sizing: border-box;
     margin: 0;
 }
 
+/* Base body styling */
 body {
     font-family: "Nunito", sans-serif;
     background-color: #f8f8f8; 
 }
 
+/* Container for the entire header section */
 .header-container {
     display: flex;
     flex-direction: column;
@@ -17,7 +21,8 @@ body {
     height: 100vh;
 }
 
-.top-heading{
+/* Top banner/header strip */
+.top-heading {
     background-color: rgb(31, 30, 30);
     font-size: 14px;
     width: 100vw;
@@ -27,6 +32,7 @@ body {
     padding: 5px;
 }
 
+/* Brand icon/logo image */
 .brand-icon {
     height: 50px;
     width: 60px;
@@ -34,12 +40,14 @@ body {
     margin-left: 10px;
 }
 
+/* Right-aligned nav icons/links */
 .icons-container {
     display: flex;
     flex-direction: row;
     margin-left: auto;
 }
 
+/* Navigation link styles */
 .nav-item {
     margin: 20px;
     color: rgb(2, 37, 16) !important;
@@ -48,14 +56,14 @@ body {
     transition: color 0.3s ease;
 }
 
+/* Hover effect for nav links */
 .nav-item:hover {
     color: rgb(36, 127, 66) !important;
 }
 
+/* =================== Footer Section =================== */
 
-
-/* Footer section */
-
+/* Container for the entire footer section */
 .footer-container {
     display: flex;
     flex-direction: column;
@@ -64,6 +72,7 @@ body {
     margin-bottom: 30px;
 }
 
+/* Newsletter sign-up area */
 .newsletter-container {
     display: flex;
     flex-direction: column;
@@ -72,6 +81,7 @@ body {
     padding: 30px;
 }
 
+/* Newsletter heading */
 .heading1 {
     font-family: "Nunito", sans-serif;
     color: white;
@@ -79,6 +89,7 @@ body {
     margin-top: 10px;
 }
 
+/* Newsletter paragraph text */
 .para1 {
     font-family: "Nunito", sans-serif;
     color: white;
@@ -87,6 +98,7 @@ body {
     text-align: center;
 }
 
+/* Container for email input and subscribe button */
 .subscribe-container {
     display: flex;
     flex-direction: row;
@@ -94,6 +106,7 @@ body {
     width: 100%;
 }
 
+/* Email input field */
 .mail-input {
     margin: 10px;
     width: 300px;
@@ -108,10 +121,12 @@ body {
     transition: border-color 0.3s ease;
 }
 
+/* Highlight input border on focus */
 .mail-input:focus {
     border-color: rgb(36, 127, 66);
 }
 
+/* Subscribe button styles */
 .subscribe-button {
     background-color: white;
     font-family: "Nunito", sans-serif;
@@ -125,11 +140,13 @@ body {
     transition: background-color 0.3s ease;
 }
 
+/* Hover effect for subscribe button */
 .subscribe-button:hover {
     background-color: rgb(36, 127, 66); 
     color: white;
 }
 
+/* Quick links section in footer */
 .quick-links-container {
     display: flex;
     flex-direction: row;
@@ -138,6 +155,7 @@ body {
     padding: 30px 0;
 }
 
+/* Individual column of links */
 .link-container {
     display: flex;
     flex-direction: column;
@@ -146,6 +164,7 @@ body {
     flex: 1;
 }
 
+/* Heading for each quick link column */
 .links-heading {
     font-family: "Nunito", sans-serif;
     color: black;
@@ -155,6 +174,7 @@ body {
     text-decoration: none;
 }
 
+/* Footer navigation links */
 .links {
     font-family: "Nunito", sans-serif;
     color: rgb(79, 79, 79);
@@ -164,10 +184,12 @@ body {
     transition: color 0.3s ease;
 }
 
+/* Hover effect for footer links */
 .links:hover {
     color: rgb(36, 127, 66);
 }
 
+/* Container for social media icons */
 .social-container {
     display: flex;
     flex-direction: row;
@@ -175,6 +197,7 @@ body {
     margin: 20px 0;
 }
 
+/* Social media icon styles */
 .social-icon {
     width: 30px;
     height: 30px;
@@ -182,10 +205,12 @@ body {
     transition: transform 0.3s ease;
 }
 
+/* Scale up on hover */
 .social-icon:hover {
     transform: scale(1.1);
 }
 
+/* Payment option logos */
 .payment-container {
     display: flex;
     flex-direction: row;
@@ -193,6 +218,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* Individual payment icon */
 .payment-image {
     width: 50px;
     height: 50px;
@@ -200,15 +226,18 @@ body {
     transition: transform 0.3s ease;
 }
 
+/* Scale up effect for payment images */
 .payment-image:hover {
     transform: scale(1.1);
 }
 
+/* Small copyright icon */
 .copyright-image {
     width: 20px;
     height: 20px;
 }
 
+/* Bottom footer text */
 .bottom-heading {
     font-family: "Nunito", sans-serif;
     color: black;

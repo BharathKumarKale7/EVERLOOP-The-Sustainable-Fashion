@@ -1,46 +1,56 @@
+// Footer section
 footer.footer-container
+  // Newsletter signup
   div.newsletter-container
-    h1.heading1 KEEP ME UPDATED
-    p.para1 Sign up to gain early access to the hottest deals & offers online.
+    h1.heading1 KEEP ME UPDATED // Heading
+    p.para1 Sign up to gain early access to the hottest deals & offers online. // Description
+    // Subscription form
     div.subscribe-container
       form.subscribe-container(action="/subscribe" method="POST")
-        input(type="hidden" name="_csrf" value=csrfToken)
-        input.mail-input(type="email", placeholder="E-Mail" name="email" required)
-        input.subscribe-button(type="submit", value="SUBSCRIBE")
+        input(type="hidden" name="_csrf" value=csrfToken) // CSRF token
+        input.mail-input(type="email", placeholder="E-Mail" name="email" required) // Email input
+        input.subscribe-button(type="submit", value="SUBSCRIBE") // Submit button
 
+  // Quick links section
   div.quick-links-container
+    // Quick links
     div.link-container
-      h1.links-heading QUICK LINKS
-      a.links(href="") Contact Us
-      a.links(href="") My Account
-      a.links(href="") Track My Order
-      a.links(href="") Returns 
+      h1.links-heading QUICK LINKS // Heading
+      a.links(href="") Contact Us // Link
+      a.links(href="") My Account // Link
+      a.links(href="") Track My Order // Link
+      a.links(href="") Returns // Link
+    // Information links
     div.link-container
-      h1.links-heading INFORMATION
-      a.links(href="") Delivery
-      a.links(href="") Terms & Conditions
-      a.links(href="") Privacy Policy
-      a.links(href="") FAQ
+      h1.links-heading INFORMATION // Heading
+      a.links(href="") Delivery // Link
+      a.links(href="") Terms & Conditions // Link
+      a.links(href="") Privacy Policy // Link
+      a.links(href="") FAQ // Link
+    // About links
     div.link-container
-      h1.links-heading ABOUT US
-      a.links(href="/about") About EverLoop
-      a.links(href="/mission") Our Mission
+      h1.links-heading ABOUT US // Heading
+      a.links(href="/about") About EverLoop // Link
+      a.links(href="/mission") Our Mission // Link
 
+  // Social media icons
   div.social-container
-    img.social-icon(src="/images/facebook.png", alt="facebook")
-    img.social-icon(src="/images/instagram.png", alt="instagram")
-    img.social-icon(src="/images/youtube.png", alt="youtube")
-    img.social-icon.p-1(src="/images/twitter.png", alt="twitter")
+    img.social-icon(src="/images/facebook.png", alt="facebook") // Facebook icon
+    img.social-icon(src="/images/instagram.png", alt="instagram") // Instagram icon
+    img.social-icon(src="/images/youtube.png", alt="youtube") // YouTube icon
+    img.social-icon.p-1(src="/images/twitter.png", alt="twitter") // Twitter icon
 
+  // Payment method icons
   div.payment-container
-    img.payment-image(src="/images/amazon-pay.png", alt="Amazon pay")
-    img.payment-image(src="/images/apple-pay.png", alt="Apple pay")
-    img.payment-image(src="/images/card.png", alt="Mastercard")
-    img.payment-image(src="/images/google-pay.png", alt="Google Pay")
-    img.payment-image(src="/images/american-express.png", alt="American express")
-    img.payment-image(src="/images/paypal.png", alt="PayPal")
-    img.payment-image(src="/images/visa.png", alt="Visa")
+    img.payment-image(src="/images/amazon-pay.png", alt="Amazon pay") // Amazon Pay icon
+    img.payment-image(src="/images/apple-pay.png", alt="Apple pay") // Apple Pay icon
+    img.payment-image(src="/images/card.png", alt="Mastercard") // Mastercard icon
+    img.payment-image(src="/images/google-pay.png", alt="Google Pay") // Google Pay icon
+    img.payment-image(src="/images/american-express.png", alt="American express") // Amex icon
+    img.payment-image(src="/images/paypal.png", alt="PayPal") // PayPal icon
+    img.payment-image(src="/images/visa.png", alt="Visa") // Visa icon
 
+  // Copyright notice
   div.d-flex.flex-row.justify-content-center
-    img.copyright-image(src="/images/copyright.png", alt="Copyright")          
-    h1.bottom-heading 2025 Everloop, Inc.
+    img.copyright-image(src="/images/copyright.png", alt="Copyright") // Copyright icon
+    h1.bottom-heading 2025 Everloop, Inc. // Copyright text
