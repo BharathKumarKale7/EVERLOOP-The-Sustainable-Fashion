@@ -4,31 +4,18 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Reset Password - EVERLOOP
-
-    //- Favicon and CSS
     link(rel="icon" type="image" href="/images/icon.jpg")
     link(rel="stylesheet" href="/password.css")
-
   body
     .container
       h2 Reset Password
-
-      //- Password reset form
       form(action="/reset/#{token}" method="POST")
         input(type="hidden" name="_csrf" value=csrfToken)
-
-        //- New password field
         label(for="password") New Password
         input#password(type="password" name="password" placeholder="Enter new password" required)
-
-        //- Confirm password field
         label(for="confirm") Confirm Password
         input#confirm(type="password" name="confirm" placeholder="Confirm new password" required)
-
-        //- Submit button
         button(type="submit") Reset Password
-
-      //- Display error if present
       if error
         .message.error
           p= error

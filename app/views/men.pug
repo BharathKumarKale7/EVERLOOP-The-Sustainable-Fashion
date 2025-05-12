@@ -1,27 +1,18 @@
-// Extend base layout
 extends layout
 
-// Main content block
 block content
-  // Men's collection container
   .collection-container
-    h1 Our Men's Collection // Page heading
-    p Discover the latest trends in men's fashion // Intro text
-    // Men's dresses section
+    h1 Our Men's Collection
+    p Discover the latest trends in men's fashion
     section.men-dresses
-      h2 Featured Men's Dresses // Section heading
-      // Grid for dress items
+      h2 Featured Men's Dresses
       .dress-container
-        .row.g-4.justify-content-center // Bootstrap grid
-          // Loop through items
+        .row.g-4.justify-content-center
           each item in items
-            .col-6.col-md-3.text-center // Grid column
-              // Product link
+            .col-6.col-md-3.text-center
               a.box(href=`/product/${item.id}`)
-                // Item image
                 .image-container
                   img.box-image(src=item.image, alt=item.name)
-                // Item details
                 .dress-info
-                  h3.box-heading= item.name // Item name
-                  p From £#{item.price} // Item price
+                  h3.box-heading= item.name
+                  p From £#{item.price}

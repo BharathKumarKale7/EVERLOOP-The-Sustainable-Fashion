@@ -1,45 +1,32 @@
-//- Inherit from the base layout
 extends layout
 
 block content
   .m-container.container
     h1 Profile Information
 
-    //- Personal Information Card
     .card.mb-4
       .card-header
         h3 Personal Information
       .card-body
         form(action="/profile/update" method="POST")
           input(type="hidden" name="_csrf" value=csrfToken)
-
-          //- Full Name field
           .form-group
             label(for="name") Full Name
             input#name.form-control(type="text" name="name" value=userDetails.name placeholder="Name" required)
-
-          //- Phone Number field
           .form-group
             label(for="phone_number") Phone Number
             input#phone_number.form-control(type="text" name="phone_number" value=userDetails.phone_number placeholder="Phone number" required)
-
-          //- Gender selection
           .form-group
             label(for="gender") Gender
             select#gender.form-control(name="gender")
               option(value="male" selected=userDetails.gender==='male') Male
               option(value="female" selected=userDetails.gender==='female') Female
               option(value="other" selected=userDetails.gender==='other') Other
-
-          //- Date of Birth field
           .form-group
             label(for="date_of_birth") Date of Birth
             input#date_of_birth.form-control(type="date" name="date_of_birth" value=userDetails.date_of_birth required)
-
-          //- Submit button
           button.btn.btn-primary.mt-3(type="submit") Update Information
 
-    //- Address Book Card
     .card.mb-4
       .card-header
         h3 Address Book
@@ -50,12 +37,8 @@ block content
               .list-group-item
                 h5 #{address.address_type} Address
                 p #{address.address_line1}, #{address.address_line2 ? address.address_line2 + ',' : ''} #{address.city}, #{address.state}, #{address.country}, #{address.postal_code}
-                
-                //- Action buttons
                 a.btn.btn-warning.btn-sm(href="/profile/address/update/#{address.id}") Edit
                 a.btn.btn-danger.btn-sm.ml-2(href="/profile/address/delete/#{address.id}") Delete
         else
           p You don't have any addresses saved yet.
-
-        //- Add new address button
         a.btn.btn-success.mt-3(href="/profile/address/add") Add New Address

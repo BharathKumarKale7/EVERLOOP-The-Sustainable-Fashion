@@ -1,33 +1,18 @@
-//- Inheriting from the base layout (likely includes header, footer, etc.)
 extends layout
 
 block content
-  //- Main container for the collection section
   .collection-container
     h1 Our Special Offers
     p Explore our discounted items
-
-    //- Section for showcasing the offers
     section.offers-items
       h2 Featured Deals
-
-      //- Container for the products
       .dress-container
-        //- Bootstrap grid row with gutter spacing and centered content
         .row.g-4.justify-content-center
-
-          //- Loop through each item in the 'items' array
           each item in items
-            //- Responsive column setup: 6 columns wide on small screens, 3 on medium+
             .col-6.col-md-3.text-center
-
-              //- Link to the individual product page
               a.box(href=`/product/${item.id}`)
                 .image-container
-                  //- Product image
                   img.box-image(src=item.image, alt=item.name)
-
-                //- Info below the image
                 .dress-info
                   h3.box-heading= item.name
                   p From £#{item.price}

@@ -1,33 +1,25 @@
-// HTML document with English language
 html(lang="en")
-  // Metadata and styles
   head
-    meta(charset='UTF-8') // UTF-8 encoding
-    meta(name='viewport', content='width=device-width, initial-scale=1.0') // Responsive viewport
-    title EVERLOOP - Sustainable Fashion // Page title
-    link(rel="icon" type="image" href="images/icon.jpg") // Favicon
-    link(rel="stylesheet" href="login.css") // Custom styles
-    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=favorite") // Material icons
-
-  // Page content
-  body
-    // Login container
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title EVERLOOP - Sustainable Fashion
+    link(rel="icon" type="image" href="images/icon.jpg")
+    link(rel="stylesheet" href="login.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=favorite")
+  body 
     .container
       .login-container
-        img.logo(src="/images/icon.jpg" alt="Everloop Logo") // Logo
-        h2 Login to EVERLOOP // Heading
-        // Error message
+        img.logo(src="/images/icon.jpg" alt="Everloop Logo")
+        h2 Login to EVERLOOP
         if error
           .alert.alert-danger.mt-3= error
-        // Login form
         form.login-form(action='/authenticate' method='POST')
-          input(type="hidden" name="_csrf" value=csrfToken) // CSRF token
-          label(for="email") Email // Email label
-          input#email(type="email" name="email" placeholder="Enter your email" required) // Email input
-          label(for="password") Password // Password label
-          input#password(type="password" name="password" placeholder="Enter your password" required) // Password input
-          a.forgot-p(href="/forgot") Forgot password? // Forgot password link
-          button.login-button(type="submit") Login // Submit button
-        // Signup link
-        p.login-link Don't have an account?
+          input(type="hidden" name="_csrf" value=csrfToken)
+          label(for="email") Email
+          input#email(type="email" name="email" placeholder="Enter your email" required)
+          label(for="password") Password
+          input#password(type="password" name="password" placeholder="Enter your password" required)
+          a.forgot-p(href="/forgot") Forgot password?
+          button.login-button(type="submit") Login
+        p.login-link Don't have an account? 
           a(href="/signup") Sign Up

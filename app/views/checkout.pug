@@ -1,23 +1,15 @@
-// Extend base layout
 extends layout
 
-// Main content block
 block content
-  // Checkout container
   .m-container.container
-    h1 Checkout // Page heading
-    // Display cart items if present
+    h1 Checkout
     if cartItems.length
-      h4 Cart Items // Items heading
-      // Loop through cart items
+      h4 Cart Items
       each item in cartItems
-        // Item card
         .card.mb-3
           .row.g-0
-            // Item image
             .col-md-4
               img(src=item.image, class="img-fluid rounded-start", alt=item.name)
-            // Item details
             .col-md-8
               .card-body
                 h5.card-title= item.name
@@ -27,24 +19,15 @@ block content
                   br
                   | Quantity: #{item.quantity}
       hr
-      // Cart total
       h4 Total: $#{total}
-      // Shipping address selection
       h4 Select Shipping Address
-      // Checkout form
       form(action="/checkout" method="POST")
-        // CSRF token
         input(type="hidden" name="_csrf" value=csrfToken)
-        // Address dropdown
         .form-group
           select.form-control(name="address_id" required)
-            // Loop through addresses
             each address in addresses
               option(value=address.id) #{address.address_type}: #{address.address_line1}, #{address.city}, #{address.country}
-        // Submit order button
         button.btn.btn-primary.mt-3(type="submit") Place Order
-    // Empty cart message
     else
       p.text-muted Your cart is empty.
-      // Continue shopping link
       a.btn.btn-primary(href="/") Continue Shopping

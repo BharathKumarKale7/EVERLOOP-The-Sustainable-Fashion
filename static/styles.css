@@ -1,7 +1,5 @@
-/* Google Fonts Import */
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
 
-/* Global Reset & Base Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,10 +7,10 @@
 }
 
 body {
-    background-color: #f8f8f8;
+    font-family: "Nunito", sans-serif;
+    background-color: #f8f8f8; 
 }
 
-/* Header Section */
 .header-container {
     display: flex;
     flex-direction: column;
@@ -20,168 +18,192 @@ body {
     height: 100vh;
 }
 
-.top-heading {
+.top-heading{
     background-color: rgb(31, 30, 30);
     font-size: 14px;
-    color: white;
+    width: 100vw;
+    font-family: "Nunito", sans-serif;
     text-align: center;
+    color: white;
     padding: 5px;
 }
 
-/* Logo */
 .brand-icon {
     height: 50px;
     width: 60px;
-    margin: 0 20px 0 10px;
+    margin-right: 20px !important;
+    margin-left: 10px;
 }
 
-/* Right-side nav icons (e.g. cart, profile) */
 .icons-container {
     display: flex;
+    flex-direction: row;
     margin-left: auto;
 }
 
-/* Navigation links */
 .nav-item {
     margin: 20px;
-    color: rgb(2, 37, 16);
+    color: rgb(2, 37, 16) !important;
     text-decoration: none;
-    font-size: 16px;
+    font-family: "Nunito", sans-serif !important;
     transition: color 0.3s ease;
+    font-size: 16px !important;
 }
 
 .nav-item:hover {
-    color: rgb(36, 127, 66);
+    color: rgb(36, 127, 66) !important;
 }
 
-/* Middle Banner Section */
+/* Middle section */
+.middle-container {
+    background-size: cover;
+}
+
 .bg-container {
     background-image: url(images/banner.jpg);
     background-size: cover;
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
 .middle-heading {
     font-size: 84px;
+    font-family: "Nunito", sans-serif;
     color: rgb(253, 13, 13);
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
 .middle-para {
     font-size: 62px;
+    font-family: "Nunito", sans-serif;
     color: white;
 }
 
-.middle-button {
+.middle-button{
     background-color: rgb(248, 4, 4);
+    text-decoration: none;
     color: white;
+    text-align: center;
     font-size: 14px;
+    font-weight: 400;
     padding: 20px;
     margin: 10px;
-    border: none;
+    border: 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .middle-button:hover {
-    background-color: black;
+    background-color: black; 
 }
 
-/* Product Card Section */
 .dress-section {
     padding: 20px;
 }
 
 .box {
     display: block;
-    padding: 8px;
     transition: transform 0.2s ease-in-out;
     text-decoration: none;
+    padding: 8px;
 }
-
 .box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 4px rgba(89, 192, 173, 0.1);
+  transform: scale(1.05);
+  box-shadow: 0 6px 4px rgba(89, 192, 173, 0.1);
 }
 
 .image-container {
-    position: relative;
-    max-width: 280px;
-    padding-top: 121.43%;
-    margin: 0 auto;
+  position: relative;
+  width: 100%;
+  max-width: 280px; /* Base width */
+  padding-top: 121.43%; /* 340/280 * 100 to maintain aspect ratio */
+  margin: 0 auto; /* Center within .col-* */
 }
 
 .box-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.product-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crop to fit the container */
+  border-radius: 5px;
 }
 
 .box-heading {
-    font-size: 16px;
-    margin-top: 10px;
-    font-weight: 600;
-    color: #000;
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000000;
+}
+
+.dress-container{
+    margin-top: 30px;
 }
 
 .dress-info {
-    padding: 10px 0;
-    text-align: center;
+  padding: 10px 0;
+  text-align: center;
 }
 
 .dress-info p {
-    font-size: 1rem;
-    color: #666;
-    margin: 0;
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
 }
 
-/* Responsive Images for Product Cards */
 @media (max-width: 768px) {
-    .image-container {
-        max-width: 400px;
-    }
+  .image-container {
+    max-width: 200px; /* Scale down on tablets */
+    padding-top: 121.43%; /* Maintain aspect ratio */
+  }
 }
 
 @media (max-width: 576px) {
-    .image-container {
-        max-width: 250px;
-    }
+  .image-container {
+    max-width: 150px; /* Scale down on mobile */
+    padding-top: 121.43%; /* Maintain aspect ratio */
+  }
 }
 
-/* Wishlist and Cart Containers */
-.wishlist-container,
-.cart-container {
-    margin: 150px auto 0;
+/* wishlist section */
+
+.wishlist-container {
+    margin: auto;
     max-width: 80%;
+    margin-top: 150px;
     background: #f8f9fa;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    justify-items: center;}
+
+/* Cart Section */
+.cart-container {
+    margin: auto;
+    max-width: 80%;
+    margin-top: 150px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    justify-items: center;
 }
 
-/* Footer Styles */
+/* Footer section */
+
 .footer-container {
     display: flex;
     flex-direction: column;
-    margin: 30px 0;
+    justify-content: flex-start;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .newsletter-container {
@@ -192,25 +214,39 @@ body {
     padding: 30px;
 }
 
-.heading1, .para1 {
+.heading1 {
+    font-family: "Nunito", sans-serif;
     color: white;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.para1 {
+    font-family: "Nunito", sans-serif;
+    color: white;
+    font-size: 15px;
+    margin: 24px;
     text-align: center;
 }
 
 .subscribe-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     width: 100%;
 }
 
 .mail-input {
+    margin: 10px;
     width: 300px;
     height: 40px;
-    margin: 10px;
-    padding: 20px;
     background-color: transparent;
     color: white;
-    border: 1px solid rgb(95, 96, 95);
+    font-family: "Nunito", sans-serif;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: rgb(95, 96, 95);
+    padding: 20px;
     transition: border-color 0.3s ease;
 }
 
@@ -219,89 +255,148 @@ body {
 }
 
 .subscribe-button {
+    background-color: white;
+    font-family: "Nunito", sans-serif;
+    color: black;
+    font-size: 12px;
     width: 140px;
     height: 40px;
     margin: 10px;
-    background-color: white;
-    color: black;
-    font-size: 12px;
-    border: none;
+    border: 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .subscribe-button:hover {
-    background-color: rgb(36, 127, 66);
+    background-color: rgb(36, 127, 66); 
     color: white;
 }
 
-/* Quick Links Footer Section */
 .quick-links-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     background-color: white;
     padding: 30px 0;
 }
 
 .link-container {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
     padding: 30px;
     text-align: center;
+    flex: 1;
 }
 
-.links-heading, .links {
-    font-size: 16px;
+.links-heading {
+    font-family: "Nunito", sans-serif;
     color: black;
+    font-size: 16px;
+    margin-top: 20px;
     margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.links {
+    font-family: "Nunito", sans-serif;
+    color: rgb(79, 79, 79);
+    font-size: 14px;
+    margin: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .links:hover {
     color: rgb(36, 127, 66);
 }
 
-/* Social & Payment Icons */
-.social-icon, .payment-image {
+.social-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin: 20px 0;
+}
+
+.social-icon {
     width: 30px;
     height: 30px;
     margin: 20px;
     transition: transform 0.3s ease;
 }
 
-.social-icon:hover, .payment-image:hover {
+.social-icon:hover {
     transform: scale(1.1);
 }
 
-/* Copyright */
+.payment-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-bottom: 20px;
+}
+
+.payment-image {
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+.payment-image:hover {
+    transform: scale(1.1);
+}
+
+.copyright-image {
+    width: 20px;
+    height: 20px;
+}
+
 .bottom-heading {
+    font-family: "Nunito", sans-serif;
+    color: black;
+    font-size: 14px;
+    margin-left: 10px;
     text-align: center;
-    font-size: 14px;
 }
 
-/* Alerts */
 .alert-success, .alert-danger {
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
 }
 
-/* About Us Section */
+/* Quick links section */
 .about-header {
     background-color: #090909;
     color: white;
-    text-align: center;
     padding: 2rem 1rem 3rem;
-    margin-top: 90px;
+    text-align: center;
+    margin-top: 80px;
 }
 
 .about-logo {
     width: 120px;
+    height: auto;
     margin: 0.5rem auto;
     display: block;
 }
 
+.about-header h1 {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+}
+
+/* Section Styles */
 .about-section {
     padding: 2rem 1.5rem;
     text-align: center;
+    margin: auto;
+}
+
+.about-section h2 {
+    color: #000000;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .about-section p {
@@ -311,23 +406,45 @@ body {
     font-size: 1.1rem;
 }
 
-/* About Page Goals List */
+/* Image Styling */
+.about-about-image {
+    display: block;
+    max-width: 50%;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Goals Section */
 .about-company-goals ul {
     max-width: 850px;
     margin: 0 auto;
+    padding: 0 1.5rem;
     list-style-type: disc;
     text-align: left;
 }
 
 .about-company-goals li {
     margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
 }
 
-/* Responsive for About Page */
+.about-company-goals strong {
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+    .about-header {
+        padding: 2rem 1rem;
+    }
+
     .about-header h1 {
         font-size: 2rem;
     }
+
     .about-about-image {
         max-width: 100%;
     }
@@ -338,24 +455,48 @@ body {
     padding: 20px;
 }
 
-/* Collection Page Styles */
-.collection-container {
-    margin-top: 140px;
+.about-copyright-image {
+    background-color:white;
+    padding: 2px;
+    width: 20px;
+    height: 20px;
+}
+
+.about-bottom-heading {
+    font-family: "Nunito", sans-serif;
+    color: white;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-top: 2px;
     text-align: center;
 }
 
-.collection-container h1 {
+/* General Layout for Collections */
+.collection-container {
+    margin-top: 140px !important;
+    font-family: "Nunito", sans-serif;
+    background-size: cover;
+    text-align: center;
+}
+
+.collection-container h1{
+    margin: 10px;
     font-size: 30px;
     font-weight: bold;
 }
 
+.collection-container p{
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
 .product-container {
-    margin-top: 120px;
+    margin-top: 120px !important;
     margin-left: 60px;
 }
 
 .product-button {
-    padding: 10px;
+    padding: 10px; 
     font-size: 14px;
     color: white;
     transition: background-color 0.3s ease;
@@ -366,7 +507,7 @@ body {
     background-color: #053333 !important;
 }
 
-/* Additional utility class */
+
 .m-container {
     margin-top: 150px;
 }

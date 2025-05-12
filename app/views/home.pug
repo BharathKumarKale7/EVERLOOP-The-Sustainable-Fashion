@@ -1,41 +1,31 @@
-// Extend base layout
 extends layout
 
-// Main content block
 block content
-  // Middle section container
   .middle-container
-    // Background promo section
     .bg-container
-      h1.middle-heading.text-shadow SALE ! // Sale heading
-      p.middle-para Upto 35% off // Discount text
-      a.middle-button(href="/offers") SHOP NOW // Shop button
-    // Dress categories section
+      h1.middle-heading.text-shadow SALE !
+      p.middle-para Upto 35% off
+      a.middle-button(href="/offers") SHOP NOW
     .dress-section.mt-5
       .container
-        // Bootstrap grid for categories
         .row.g-4.justify-content-center
-          // Ladies wear category
           .col-6.col-md-3.text-center
             a.box(href="/women")
               .image-container
-                img.box-image(src="images/w.jpg" alt="Ladies Wear") // Category image
-              h3.box-heading LADIES WEAR // Category title
-          // Mens wear category
+                img.box-image(src="images/w.jpg" alt="Ladies Wear")
+              h3.box-heading LADIES WEAR
           .col-6.col-md-3.text-center
             a.box(href="/men")
               .image-container
-                img.box-image(src="images/m.jpg" alt="Mens Wear") // Category image
-              h3.box-heading MENS WEAR // Category title
-          // Kids wear category
+                img.box-image(src="images/m.jpg" alt="Mens Wear")
+              h3.box-heading MENS WEAR
           .col-6.col-md-3.text-center
             a.box(href="/kids")
               .image-container
-                img.box-image(src="images/kw.jpg" alt="Kids Wear") // Category image
-              h3.box-heading KIDS WEAR // Category title
-          // Accessories category
+                img.box-image(src="images/kw.jpg" alt="Kids Wear")
+              h3.box-heading KIDS WEAR
           .col-6.col-md-3.text-center
             a.box(href="/accessories")
               .image-container
-                img.box-image(src="images/acc.jpg" alt="Accessories") // Category image
-              h3.box-heading ACCESSORIES // Category title
+                img.box-image(src="images/acc.jpg" alt="Accessories")
+              h3.box-heading ACCESSORIES
