@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .m-container.container
+    h1 Checkout
+    if cartItems.length
+      h4 Cart Items
+      each item in cartItems
+        .card.mb-3
+          .row.g-0
+            .col-md-4
+              img(src=item.image, class="img-fluid rounded-start", alt=item.name)
+            .col-md-8
+              .card-body
+                h5.card-title= item.name
+                p.card-text= item.description
+                p.card-text
+                  small.text-muted Price: £#{item.price}
+                  br
+                  | Quantity: #{item.quantity}
+      hr
+      h4 Total: $#{total}
+      h4 Select Shipping Address
+      form(action="/checkout" method="POST")
+        input(type="hidden" name="_csrf" value=csrfToken)
+        .form-group
+          select.form-control(name="address_id" required)
+            each address in addresses
+              option(value=address.id) #{address.address_type}: #{address.address_line1}, #{address.city}, #{address.country}
+        button.btn.btn-primary.mt-3(type="submit") Place Order
+    else
+      p.text-muted Your cart is empty.
+      a.btn.btn-primary(href="/") Continue Shopping

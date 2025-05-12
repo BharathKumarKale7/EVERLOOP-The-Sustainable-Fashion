@@ -1,0 +1,37 @@
+
+div
+  h1.top-heading.fixed-top FREE SHIPPING ON YOUR FIRST ORDER | SHOP NOW
+  header.container-fluid
+    nav.navbar.navbar-expand-lg.navbar-light.bg-white.shadow-sm.mt-4.fixed-top
+      div.container-fluid.d-flex.justify-content-between
+        a.navbar-brand.order-2.order-lg-1.mx-md-auto(href="/")
+          img.brand-icon(src="/images/icon.jpg", alt="EverLoop Icon") 
+        button.navbar-toggler.order-1.d-lg-none(type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav")
+          span.navbar-toggler-icon
+        div#navbarNav.collapse.navbar-collapse.order-lg-2.order-4
+          div.navbar-nav.mr-auto
+            a.nav-item.nav-link(href="/men") Men 
+            a.nav-item.nav-link(href="/women") Women
+            a.nav-item.nav-link(href="/kids") Kids
+            a.nav-item.nav-link(href="/accessories") Accessories
+        div.icons-container.order-3.d-flex.align-items-center#user-actions
+          a.nav-item.nav-link(href="/cart") 🛒 Cart
+          a.nav-item.nav-link(href="/wishlist") ❤️ Wishlist
+          if url !== '/'
+            a.nav-item.nav-link(href="/") 🏠 Home 
+          if loggedIn
+            .nav-item.dropdown
+              a#userDropdown.nav-link.dropdown-toggle(href="/", role="button", data-bs-toggle="dropdown", aria-expanded="false")
+                | Hi! 
+                span.fw-bold #{username.charAt(0).toUpperCase() + username.slice(1)}
+              ul.dropdown-menu.dropdown-menu-end(aria-labelledby="userDropdown")
+                li
+                  a.dropdown-item(href="/profile") 👤 My Profile
+                li
+                  a.dropdown-item(href="/orders") 📦 My Orders
+                li
+                  hr.dropdown-divider
+                li
+                  a.dropdown-item(href="/logout") 🚪 Logout
+          else
+            a.nav-item.nav-link(href="/login") 🔑 Login

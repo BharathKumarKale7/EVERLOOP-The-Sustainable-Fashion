@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Reset Password - EVERLOOP
+    link(rel="icon" type="image" href="/images/icon.jpg")
+    link(rel="stylesheet" href="/password.css")
+  body
+    .container
+      h2 Reset Password
+      form(action="/reset/#{token}" method="POST")
+        input(type="hidden" name="_csrf" value=csrfToken)
+        label(for="password") New Password
+        input#password(type="password" name="password" placeholder="Enter new password" required)
+        label(for="confirm") Confirm Password
+        input#confirm(type="password" name="confirm" placeholder="Confirm new password" required)
+        button(type="submit") Reset Password
+      if error
+        .message.error
+          p= error

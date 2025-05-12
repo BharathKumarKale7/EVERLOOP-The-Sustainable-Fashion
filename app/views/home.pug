@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  .middle-container
+    .bg-container
+      h1.middle-heading.text-shadow SALE !
+      p.middle-para Upto 35% off
+      a.middle-button(href="/offers") SHOP NOW
+    .dress-section.mt-5
+      .container
+        .row.g-4.justify-content-center
+          .col-6.col-md-3.text-center
+            a.box(href="/women")
+              .image-container
+                img.box-image(src="images/w.jpg" alt="Ladies Wear")
+              h3.box-heading LADIES WEAR
+          .col-6.col-md-3.text-center
+            a.box(href="/men")
+              .image-container
+                img.box-image(src="images/m.jpg" alt="Mens Wear")
+              h3.box-heading MENS WEAR
+          .col-6.col-md-3.text-center
+            a.box(href="/kids")
+              .image-container
+                img.box-image(src="images/kw.jpg" alt="Kids Wear")
+              h3.box-heading KIDS WEAR
+          .col-6.col-md-3.text-center
+            a.box(href="/accessories")
+              .image-container
+                img.box-image(src="images/acc.jpg" alt="Accessories")
+              h3.box-heading ACCESSORIES

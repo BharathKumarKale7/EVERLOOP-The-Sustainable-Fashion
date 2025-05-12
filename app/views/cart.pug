@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  .cart-container
+      if message
+        .alert.alert-success.alert-dismissible.fade.show.mt-3(role="alert")
+          = message
+          button.btn-close(type="button" data-bs-dismiss="alert" aria-label="Close")
+      if error
+        .alert.alert-danger.alert-dismissible.fade.show.mt-3(role="alert")
+          = error
+          button.btn-close(type="button" data-bs-dismiss="alert" aria-label="Close")
+      h1 Cart
+      if cartItems && cartItems.length
+        each item in cartItems
+          .card.mb-3
+            .row.g-0
+              .col-md-4
+                img(src=item.image, class="img-fluid rounded-start", alt=item.name)
+              .col-md-8
+                .card-body
+                  h5.card-title= item.name
+                  p.card-text= item.description
+                  p.card-text
+                    small.text-muted Price: £#{item.price}
+                    br
+                    | Quantity: #{item.quantity}
+                  a.btn.btn-danger(href=`/cart/remove/${item.id}`) Remove
+        hr
+        h4 Total: £#{total}
+        a.btn.btn-primary(href="/checkout") Proceed to Checkout
+      else
+        p.text-muted Your cart is empty.
+      script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js")

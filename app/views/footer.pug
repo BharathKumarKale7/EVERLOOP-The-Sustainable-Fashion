@@ -1,0 +1,46 @@
+footer.footer-container
+  div.newsletter-container
+    h1.heading1 KEEP ME UPDATED
+    p.para1 Sign up to gain early access to the hottest deals & offers online.
+    div.subscribe-container
+      form.subscribe-container(action="/subscribe" method="POST")
+        input(type="hidden" name="_csrf" value=csrfToken)
+        input.mail-input(type="email", placeholder="E-Mail" name="email" required)
+        input.subscribe-button(type="submit", value="SUBSCRIBE")
+
+  div.quick-links-container
+    div.link-container
+      h1.links-heading QUICK LINKS
+      a.links(href="") Contact Us
+      a.links(href="") My Account
+      a.links(href="") Track My Order
+      a.links(href="") Returns 
+    div.link-container
+      h1.links-heading INFORMATION
+      a.links(href="") Delivery
+      a.links(href="") Terms & Conditions
+      a.links(href="") Privacy Policy
+      a.links(href="") FAQ
+    div.link-container
+      h1.links-heading ABOUT US
+      a.links(href="/about") About EverLoop
+      a.links(href="/mission") Our Mission
+
+  div.social-container
+    img.social-icon(src="/images/facebook.png", alt="facebook")
+    img.social-icon(src="/images/instagram.png", alt="instagram")
+    img.social-icon(src="/images/youtube.png", alt="youtube")
+    img.social-icon.p-1(src="/images/twitter.png", alt="twitter")
+
+  div.payment-container
+    img.payment-image(src="/images/amazon-pay.png", alt="Amazon pay")
+    img.payment-image(src="/images/apple-pay.png", alt="Apple pay")
+    img.payment-image(src="/images/card.png", alt="Mastercard")
+    img.payment-image(src="/images/google-pay.png", alt="Google Pay")
+    img.payment-image(src="/images/american-express.png", alt="American express")
+    img.payment-image(src="/images/paypal.png", alt="PayPal")
+    img.payment-image(src="/images/visa.png", alt="Visa")
+
+  div.d-flex.flex-row.justify-content-center
+    img.copyright-image(src="/images/copyright.png", alt="Copyright")          
+    h1.bottom-heading 2025 Everloop, Inc.

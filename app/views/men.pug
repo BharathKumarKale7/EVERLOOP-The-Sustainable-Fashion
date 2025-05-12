@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .collection-container
+    h1 Our Men's Collection
+    p Discover the latest trends in men's fashion
+    section.men-dresses
+      h2 Featured Men's Dresses
+      .dress-container
+        .row.g-4.justify-content-center
+          each item in items
+            .col-6.col-md-3.text-center
+              a.box(href=`/product/${item.id}`)
+                .image-container
+                  img.box-image(src=item.image, alt=item.name)
+                .dress-info
+                  h3.box-heading= item.name
+                  p From £#{item.price}
